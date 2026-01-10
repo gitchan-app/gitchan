@@ -24,9 +24,9 @@ GitChan is a fork of [Gitify](https://github.com/gitify-app/gitify), enhanced wi
 
 | Platform | Download |
 |----------|----------|
-| macOS | [GitChan-0.0.2-universal.dmg](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2-universal.dmg) |
-| Windows | [GitChan-Setup-0.0.2.exe](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-Setup-0.0.2.exe) |
-| Linux | [GitChan-0.0.2.AppImage](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2.AppImage) |
+| macOS | [GitChan-0.0.3-universal.dmg](https://github.com/gitchan-app/gitchan/releases/download/v0.0.3/GitChan-0.0.3-universal.dmg) |
+| Windows | [GitChan-Setup-0.0.3.exe](https://github.com/gitchan-app/gitchan/releases/download/v0.0.3/GitChan-Setup-0.0.3.exe) |
+| Linux | [GitChan-0.0.3.AppImage](https://github.com/gitchan-app/gitchan/releases/download/v0.0.3/GitChan-0.0.3.AppImage) |
 
 Or visit the [Releases](https://github.com/gitchan-app/gitchan/releases) page for all versions.
 
