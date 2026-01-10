@@ -36,7 +36,8 @@ Or visit the [Releases](https://github.com/gitchan-app/gitchan/releases) page fo
 
 - [Download](#download)
 - [Features](#features)
-- [Installation](#installation)
+- [Installation Notes](#installation-notes)
+- [Development Setup](#development-setup)
 - [How to Run](#how-to-run)
 - [How to Use](#how-to-use)
 - [Modifications from Gitify](#modifications-from-gitify)
@@ -68,7 +69,37 @@ Or visit the [Releases](https://github.com/gitchan-app/gitchan/releases) page fo
 
 ---
 
-## Installation
+## Installation Notes
+
+### macOS
+
+If you see a warning that the app "can't be opened" or "isn't commonly downloaded":
+
+1. Go to **System Settings** → **Privacy & Security**
+2. Click **Open Anyway**
+
+Or run in Terminal:
+```bash
+xattr -cr /Applications/GitChan.app
+```
+
+### Windows
+
+**Browser download warning (Edge/Chrome):**
+
+If Edge shows "isn't commonly downloaded" warning:
+1. Click **⋯** (three dots) next to the download
+2. Click **Keep** → **Keep anyway**
+
+**SmartScreen warning (after running installer):**
+
+If you see "Windows protected your PC":
+1. Click **More info**
+2. Click **Run anyway**
+
+---
+
+## Development Setup
 
 ### Prerequisites
 

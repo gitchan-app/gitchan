@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gitchan-app.github.io/gitchan/sitemap.xml
