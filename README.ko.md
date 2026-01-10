@@ -1,6 +1,14 @@
-# GitChan
+<div align="center">
+  <img src="assets/images/gitchan.png" alt="GitChan" width="128">
+  <p>귀여운 Live2D 마스코트와 함께하는 GitHub 알림 데스크톱 앱</p>
+  <p>
+    <img src="https://img.shields.io/github/v/release/rojae/gitchan" alt="Release">
+    <img src="https://img.shields.io/github/license/rojae/gitchan" alt="License">
+    <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue" alt="Platform">
+  </p>
+</div>
 
-> 귀여운 Live2D 마스코트와 함께하는 GitHub 알림 데스크톱 앱. macOS, Windows, Linux 지원.
+---
 
 **개인 및 비상업적 사용은 무료입니다.** 상업적 사용은 Live2D 라이선스가 필요합니다. 자세한 내용은 [라이선스](#라이선스)를 참조하세요.
 

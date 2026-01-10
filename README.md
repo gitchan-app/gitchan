@@ -1,6 +1,14 @@
-# GitChan
+<div align="center">
+  <img src="assets/images/gitchan.png" alt="GitChan" width="128">
+  <p>A cute Live2D mascot for GitHub notifications on your desktop</p>
+  <p>
+    <img src="https://img.shields.io/github/v/release/rojae/gitchan" alt="Release">
+    <img src="https://img.shields.io/github/license/rojae/gitchan" alt="License">
+    <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue" alt="Platform">
+  </p>
+</div>
 
-> A cute Live2D mascot for GitHub notifications on your desktop. Available on macOS, Windows, and Linux.
+---
 
 **Free for personal and non-commercial use.** Commercial use requires a Live2D license. See [License](#license) for details.
 
