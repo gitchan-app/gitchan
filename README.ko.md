@@ -19,8 +19,21 @@ GitChan은 [Gitify](https://github.com/gitify-app/gitify)를 기반으로 Live2D
 
 ---
 
+## 다운로드
+
+| 플랫폼 | 다운로드 |
+|--------|----------|
+| macOS | [GitChan-0.0.2-universal.dmg](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2-universal.dmg) |
+| Windows | [GitChan-Setup-0.0.2.exe](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-Setup-0.0.2.exe) |
+| Linux | [GitChan-0.0.2.AppImage](https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2.AppImage) |
+
+모든 버전은 [Releases](https://github.com/gitchan-app/gitchan/releases) 페이지에서 확인하세요.
+
+---
+
 ## 목차
 
+- [다운로드](#다운로드)
 - [기능](#기능)
 - [설치](#설치)
 - [실행 방법](#실행-방법)
