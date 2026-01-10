@@ -2,8 +2,9 @@
   <img src="assets/images/gitchan.png" alt="GitChan" width="128">
   <p>A cute Live2D mascot for GitHub notifications on your desktop</p>
   <p>
-    <img src="https://img.shields.io/github/v/release/rojae/gitchan" alt="Release">
-    <img src="https://img.shields.io/github/license/rojae/gitchan" alt="License">
+    <a href="https://github.com/gitify-app/gitify"><img src="https://img.shields.io/badge/based%20on-Gitify-blue" alt="Based on Gitify"></a>
+    <img src="https://img.shields.io/github/v/release/gitchan-app/gitchan" alt="Release">
+    <img src="https://img.shields.io/github/license/gitchan-app/gitchan" alt="License">
     <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue" alt="Platform">
   </p>
 </div>
