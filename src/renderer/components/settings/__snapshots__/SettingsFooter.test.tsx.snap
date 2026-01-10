@@ -20,7 +20,7 @@ exports[`renderer/components/settings/SettingsFooter.tsx should show app version
       class="prc-Button-Label-FWkx3"
       data-component="text"
     >
-      Gitify
+      GitChan
        
       v0.0.1
     </span>

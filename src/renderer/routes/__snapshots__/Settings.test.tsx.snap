@@ -1501,6 +1501,47 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             data-wrap="nowrap"
           >
             <label
+              class="cursor-pointer"
+              for="language"
+            >
+              Language:
+            </label>
+            <select
+              class="cursor-pointer rounded border border-gray-300 bg-transparent px-2 py-1 text-sm"
+              id="language"
+            >
+              <option
+                value="system"
+              >
+                System
+              </option>
+              <option
+                value="en"
+              >
+                English
+              </option>
+              <option
+                value="ko"
+              >
+                Korean
+              </option>
+              <option
+                value="ja"
+              >
+                Japanese
+              </option>
+            </select>
+          </div>
+          <div
+            class="text-sm prc-Stack-Stack-UQ9k6"
+            data-align="center"
+            data-direction="horizontal"
+            data-gap="condensed"
+            data-justify="start"
+            data-padding="none"
+            data-wrap="nowrap"
+          >
+            <label
               class="mr-1 font-medium cursor-pointer"
               for="openLinks"
             >
@@ -1888,6 +1929,341 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </svg>
             </button>
           </div>
+          <div
+            class="text-sm prc-Stack-Stack-UQ9k6"
+            data-align="center"
+            data-direction="horizontal"
+            data-gap="condensed"
+            data-justify="start"
+            data-padding="none"
+            data-wrap="nowrap"
+          >
+            <label
+              class="cursor-pointer"
+              for="mascotModel"
+            >
+              Mascot Character:
+            </label>
+            <select
+              class="cursor-pointer rounded border border-gray-300 bg-transparent px-2 py-1 text-sm"
+              id="mascotModel"
+            >
+              <option
+                value="hiyori"
+              >
+                Hiyori
+                 -
+                 
+                Cheerful schoolgirl
+              </option>
+              <option
+                value="haru"
+              >
+                Haru
+                 -
+                 
+                Calm female character
+              </option>
+              <option
+                value="mao"
+              >
+                Mao
+                 -
+                 
+                Mysterious wizard
+              </option>
+              <option
+                value="natori"
+              >
+                Natori
+                 -
+                 
+                Friendly male character
+              </option>
+              <option
+                value="mark"
+              >
+                Mark
+                 -
+                 
+                Humorous male character
+              </option>
+              <option
+                value="rice"
+              >
+                Rice
+                 -
+                 
+                Cool wizard
+              </option>
+              <option
+                value="wanko"
+              >
+                Wanko
+                 -
+                 
+                Loyal puppy
+              </option>
+            </select>
+          </div>
+          <div
+            class="text-sm prc-Stack-Stack-UQ9k6"
+            data-align="center"
+            data-direction="horizontal"
+            data-gap="condensed"
+            data-justify="start"
+            data-padding="none"
+            data-wrap="nowrap"
+          >
+            <label
+              class="cursor-pointer"
+              for="mascotScale"
+            >
+              Mascot Size:
+            </label>
+            <input
+              class="w-24 cursor-pointer"
+              id="mascotScale"
+              max="150"
+              min="50"
+              step="10"
+              type="range"
+              value="100"
+            />
+            <div
+              class="prc-ButtonGroup-ButtonGroup-vFUrY"
+              data-testid="settings-mascot-scale-group"
+            >
+              <div>
+                <button
+                  aria-label="Scale percentage"
+                  class="prc-Button-ButtonBase-9n-Xk"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-variant="default"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="prc-Button-ButtonContent-Iohp5"
+                    data-align="center"
+                    data-component="buttonContent"
+                  >
+                    <span
+                      class="prc-Button-Label-FWkx3"
+                      data-component="text"
+                    >
+                      100
+                      %
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button
+                  aria-label="Reset scale"
+                  class="prc-Button-ButtonBase-9n-Xk prc-Button-IconButton-fyge7"
+                  data-component="IconButton"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-testid="settings-mascot-scale-reset"
+                  data-variant="danger"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="octicon octicon-sync"
+                    display="inline-block"
+                    fill="currentColor"
+                    focusable="false"
+                    height="16"
+                    overflow="visible"
+                    style="vertical-align: text-bottom;"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-sm prc-Stack-Stack-UQ9k6"
+            data-align="center"
+            data-direction="horizontal"
+            data-gap="condensed"
+            data-justify="start"
+            data-padding="none"
+            data-wrap="nowrap"
+          >
+            <label
+              class="cursor-pointer"
+              for="mascotBadgeY"
+            >
+              Badge Position:
+            </label>
+            <input
+              class="w-24 cursor-pointer"
+              id="mascotBadgeY"
+              max="200"
+              min="20"
+              step="10"
+              type="range"
+              value="60"
+            />
+            <div
+              class="prc-ButtonGroup-ButtonGroup-vFUrY"
+              data-testid="settings-mascot-badge-group"
+            >
+              <div>
+                <button
+                  aria-label="Badge Y position"
+                  class="prc-Button-ButtonBase-9n-Xk"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-variant="default"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="prc-Button-ButtonContent-Iohp5"
+                    data-align="center"
+                    data-component="buttonContent"
+                  >
+                    <span
+                      class="prc-Button-Label-FWkx3"
+                      data-component="text"
+                    >
+                      60
+                      px
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button
+                  aria-label="Reset badge position"
+                  class="prc-Button-ButtonBase-9n-Xk prc-Button-IconButton-fyge7"
+                  data-component="IconButton"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-testid="settings-mascot-badge-reset"
+                  data-variant="danger"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="octicon octicon-sync"
+                    display="inline-block"
+                    fill="currentColor"
+                    focusable="false"
+                    height="16"
+                    overflow="visible"
+                    style="vertical-align: text-bottom;"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-sm prc-Stack-Stack-UQ9k6"
+            data-align="center"
+            data-direction="horizontal"
+            data-gap="condensed"
+            data-justify="start"
+            data-padding="none"
+            data-wrap="nowrap"
+          >
+            <label
+              class="cursor-pointer"
+              for="mascotWindowScale"
+            >
+              Window Size:
+            </label>
+            <input
+              class="w-24 cursor-pointer"
+              id="mascotWindowScale"
+              max="200"
+              min="50"
+              step="10"
+              type="range"
+              value="100"
+            />
+            <div
+              class="prc-ButtonGroup-ButtonGroup-vFUrY"
+              data-testid="settings-mascot-window-scale-group"
+            >
+              <div>
+                <button
+                  aria-label="Window scale percentage"
+                  class="prc-Button-ButtonBase-9n-Xk"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-variant="default"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="prc-Button-ButtonContent-Iohp5"
+                    data-align="center"
+                    data-component="buttonContent"
+                  >
+                    <span
+                      class="prc-Button-Label-FWkx3"
+                      data-component="text"
+                    >
+                      100
+                      %
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button
+                  aria-label="Reset window scale"
+                  class="prc-Button-ButtonBase-9n-Xk prc-Button-IconButton-fyge7"
+                  data-component="IconButton"
+                  data-loading="false"
+                  data-no-visuals="true"
+                  data-size="small"
+                  data-testid="settings-mascot-window-scale-reset"
+                  data-variant="danger"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="octicon octicon-sync"
+                    display="inline-block"
+                    fill="currentColor"
+                    focusable="false"
+                    height="16"
+                    overflow="visible"
+                    style="vertical-align: text-bottom;"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </fieldset>
       <div
@@ -1943,7 +2319,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         data-wrap="nowrap"
       >
         <button
-          aria-describedby="_r_12_"
+          aria-describedby="_r_18_"
           class="prc-Button-ButtonBase-9n-Xk"
           data-loading="false"
           data-no-visuals="true"
@@ -1961,7 +2337,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="prc-Button-Label-FWkx3"
               data-component="text"
             >
-              Gitify
+              GitChan
                
               v0.0.1
             </span>
@@ -1971,7 +2347,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           aria-hidden="true"
           class="prc-TooltipV2-Tooltip-tLeuB"
           data-direction="ne"
-          id="_r_12_"
+          id="_r_18_"
           popover="auto"
           role="tooltip"
         >
@@ -1988,7 +2364,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         data-wrap="nowrap"
       >
         <button
-          aria-describedby="_r_14_"
+          aria-describedby="_r_1a_"
           aria-label="Accounts"
           class="prc-Button-ButtonBase-9n-Xk prc-Button-IconButton-fyge7"
           data-component="IconButton"
@@ -2020,15 +2396,15 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           aria-hidden="true"
           class="prc-TooltipV2-Tooltip-tLeuB"
           data-direction="n"
-          id="_r_14_"
+          id="_r_1a_"
           popover="auto"
           role="tooltip"
         >
           Accounts
         </span>
         <button
-          aria-describedby="_r_16_"
-          aria-label="Quit Gitify"
+          aria-describedby="_r_1c_"
+          aria-label="Quit GitChan"
           class="prc-Button-ButtonBase-9n-Xk prc-Button-IconButton-fyge7"
           data-component="IconButton"
           data-loading="false"
@@ -2059,11 +2435,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           aria-hidden="true"
           class="prc-TooltipV2-Tooltip-tLeuB"
           data-direction="nw"
-          id="_r_16_"
+          id="_r_1c_"
           popover="auto"
           role="tooltip"
         >
-          Quit Gitify
+          Quit GitChan
         </span>
       </div>
     </div>

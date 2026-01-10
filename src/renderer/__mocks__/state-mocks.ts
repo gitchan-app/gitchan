@@ -1,3 +1,5 @@
+import { DEFAULT_MASCOT_MODEL } from '../../shared/constants';
+
 import { Constants } from '../constants';
 import {
   type AppearanceSettingsState,
@@ -61,6 +63,10 @@ const mockSystemSettings: SystemSettingsState = {
   playSound: true,
   notificationVolume: 20 as Percentage,
   openAtStartup: false,
+  mascotModel: DEFAULT_MASCOT_MODEL,
+  mascotScale: 100 as Percentage,
+  mascotBadgeY: 60,
+  mascotWindowScale: 100 as Percentage,
 };
 
 const mockFilters: FilterSettingsState = {

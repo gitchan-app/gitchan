@@ -33,7 +33,7 @@ describe('renderer/utils/links.ts', () => {
     openGitifyReleaseNotes('v1.0.0');
 
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      'https://github.com/gitify-app/gitify/releases/tag/v1.0.0',
+      'https://github.com/gitchan-app/gitchan/releases/tag/v1.0.0',
     );
   });
 

@@ -1,0 +1,326 @@
+{
+  "common": {
+    "settings": "Settings",
+    "filters": "Filters",
+    "accounts": "Accounts",
+    "quit": "Quit {{appName}}",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "save": "Save",
+    "close": "Close",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": {
+      "title": "Appearance",
+      "theme": "Theme:",
+      "themes": {
+        "system": "System",
+        "lightDefault": "Light default",
+        "lightColorblind": "Light colorblind",
+        "lightTritanopia": "Light Tritanopia",
+        "darkDefault": "Dark default",
+        "darkColorblind": "Dark colorblind",
+        "darkTritanopia": "Dark Tritanopia",
+        "softDark": "Soft dark"
+      },
+      "increaseContrast": "Increase contrast",
+      "increaseContrastDescription": "Enable high contrast colors for improved legibility. Further accessibility improvements coming soon.",
+      "zoom": "Zoom:",
+      "zoomOut": "Zoom out",
+      "zoomPercentage": "Zoom percentage",
+      "zoomIn": "Zoom in",
+      "resetZoom": "Reset zoom",
+      "showAccountHeader": "Show account header",
+      "showAccountHeaderDescription": "When enabled, displays an account header above notification list groups which links to the profile page of the account.",
+      "showFullTitle": "Show full notification title",
+      "showFullTitleDescription": "Wrap long notification titles onto multiple lines instead of truncating them."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "groupBy": "Group by:",
+      "groupByRepository": "Repository",
+      "groupByDate": "Date",
+      "fetchType": "Fetch type:",
+      "fetchTypeInterval": "Interval",
+      "fetchTypeInactivity": "Inactivity",
+      "fetchInterval": "Fetch interval:",
+      "decreaseInterval": "Decrease fetch interval",
+      "intervalValue": "Fetch interval",
+      "increaseInterval": "Increase fetch interval",
+      "resetInterval": "Reset fetch interval",
+      "fetchAll": "Fetch all notifications",
+      "fetchAllDescription": "When enabled, fetch all unread notifications from GitHub.",
+      "fetchDetailed": "Fetch detailed notifications",
+      "fetchDetailedDescription": "When enabled, fetch additional notification details such as labels, milestones, and reviews.",
+      "showMetricPills": "Show notification metric pills",
+      "showMetricPillsDescription": "Show notification metric pills such as comments, reviews, and labels.",
+      "showGitHubNumber": "Show GitHub number",
+      "showGitHubNumberDescription": "Show the GitHub issue or pull request number.",
+      "fetchParticipating": "Fetch only participating",
+      "fetchParticipatingDescription": "Only fetch notifications where you are directly participating or mentioned.",
+      "markDoneOnOpen": "Mark as done on open",
+      "markDoneOnOpenDescription": "Mark notification as done when opened in browser.",
+      "markDoneOnUnsubscribe": "Mark as done on unsubscribe",
+      "markDoneOnUnsubscribeDescription": "Mark notification as done when unsubscribed.",
+      "delayState": "Delay notification state",
+      "delayStateDescription": "Delay updating notification state until the next fetch cycle."
+    },
+    "tray": {
+      "title": "Tray",
+      "showCount": "Show notification count",
+      "showCountDescription": "Display the number of unread notifications in the tray icon.",
+      "highlightUnread": "Highlight unread notifications",
+      "highlightUnreadDescription": "Highlight the tray icon when there are unread notifications.",
+      "alternateIcon": "Use alternate idle icon",
+      "alternateIconDescription": "Use an alternate idle icon for the tray."
+    },
+    "system": {
+      "title": "System",
+      "language": "Language:",
+      "languages": {
+        "system": "System",
+        "en": "English",
+        "ko": "Korean",
+        "ja": "Japanese"
+      },
+      "openLinks": "Open Links:",
+      "openForeground": "Foreground",
+      "openBackground": "Background",
+      "keyboardShortcut": "Enable keyboard shortcut",
+      "keyboardShortcutDescription": "Enable the global keyboard shortcut to open GitChan.",
+      "showSystemNotifications": "Show system notifications",
+      "showSystemNotificationsDescription": "Show desktop notifications for new GitHub notifications.",
+      "playSound": "Play sound",
+      "playSoundDescription": "Play a sound when receiving new notifications.",
+      "volume": "Notification volume",
+      "volumeDown": "Volume down",
+      "volumePercentage": "Volume percentage",
+      "volumeUp": "Volume up",
+      "resetVolume": "Reset volume",
+      "openAtStartup": "Open at startup",
+      "openAtStartupDescription": "Launch GitChan when your computer starts.",
+      "mascotCharacter": "Mascot Character:",
+      "mascotSize": "Mascot Size:",
+      "badgePosition": "Badge Position:",
+      "windowSize": "Window Size:"
+    },
+    "reset": {
+      "button": "Reset Settings",
+      "title": "Reset settings?",
+      "description": "Please confirm that you want to reset all settings to the GitChan defaults",
+      "confirm": "Reset",
+      "cancel": "Cancel"
+    },
+    "footer": {
+      "viewReleaseNotes": "View release notes",
+      "accounts": "Accounts",
+      "quit": "Quit {{appName}}"
+    }
+  },
+  "filters": {
+    "title": "Filters",
+    "clearFilters": "Clear filters",
+    "search": {
+      "include": "Include search terms",
+      "exclude": "Exclude search terms"
+    },
+    "userType": {
+      "title": "User Type",
+      "user": "User",
+      "bot": "Bot",
+      "botDescription": "Bot accounts such as @dependabot, @renovate, @netlify, etc",
+      "organization": "Organization"
+    },
+    "subjectType": {
+      "title": "Type",
+      "checkSuite": "Check Suite",
+      "commit": "Commit",
+      "discussion": "Discussion",
+      "issue": "Issue",
+      "pullRequest": "Pull Request",
+      "release": "Release",
+      "dependabotAlert": "Dependabot Alert",
+      "invitation": "Invitation",
+      "vulnerabilityAlert": "Vulnerability Alert",
+      "workflowRun": "Workflow Run"
+    },
+    "state": {
+      "title": "State",
+      "draft": "Draft",
+      "open": "Open",
+      "openDescription": "Open or reopened",
+      "merged": "Merged",
+      "closed": "Closed",
+      "closedDescription": "Closed, completed, duplicate, resolved or not planned",
+      "other": "Other",
+      "otherDescription": "Catch all for any other notification states"
+    },
+    "reason": {
+      "title": "Reason",
+      "approvalRequested": "Approval Requested",
+      "approvalRequestedDescription": "You were requested to review and approve a deployment.",
+      "assigned": "Assigned",
+      "assignedDescription": "You were assigned to the issue.",
+      "authored": "Authored",
+      "authoredDescription": "You created the thread.",
+      "ciActivity": "Workflow Run Completed",
+      "ciActivityDescription": "A GitHub Actions workflow run was triggered for your repository.",
+      "commented": "Commented",
+      "commentedDescription": "You commented on the thread.",
+      "invitationReceived": "Invitation Received",
+      "invitationReceivedDescription": "You accepted an invitation to contribute to the repository.",
+      "manual": "Updated",
+      "manualDescription": "You subscribed to the thread (via an issue or pull request).",
+      "memberFeatureRequested": "Member Feature Requested",
+      "memberFeatureRequestedDescription": "Organization members have requested to enable a feature such as Draft Pull Requests or Copilot.",
+      "mentioned": "Mentioned",
+      "mentionedDescription": "You were specifically @mentioned in the content.",
+      "reviewRequested": "Review Requested",
+      "reviewRequestedDescription": "You, or a team you're a member of, were requested to review a pull request.",
+      "securityAdvisoryCredit": "Security Advisory Credit",
+      "securityAdvisoryCreditDescription": "You were credited for contributing to a security advisory.",
+      "securityAlert": "Security Alert",
+      "securityAlertDescription": "GitHub discovered a security vulnerability in your repository.",
+      "stateChange": "State Changed",
+      "stateChangeDescription": "You changed the thread state (for example, closing an issue or merging a pull request).",
+      "subscribed": "Subscribed",
+      "subscribedDescription": "You're watching the repository.",
+      "teamMention": "Team Mentioned",
+      "teamMentionDescription": "You were on a team that was mentioned."
+    }
+  },
+  "accounts": {
+    "title": "Accounts",
+    "openProfile": "Open account profile",
+    "openHost": "Open host",
+    "openDeveloperSettings": "Open developer settings",
+    "primaryAccount": "Primary account",
+    "setAsPrimary": "Set as primary account",
+    "refresh": "Refresh {{login}}",
+    "logout": "Logout {{login}}",
+    "addNew": "Add new account",
+    "loginGitHub": "Login with GitHub",
+    "loginPAT": "Login with Personal Access Token",
+    "loginOAuth": "Login with OAuth App"
+  },
+  "mascot": {
+    "hiyori": {
+      "name": "Hiyori",
+      "description": "Cheerful schoolgirl"
+    },
+    "haru": {
+      "name": "Haru",
+      "description": "Calm female character"
+    },
+    "mao": {
+      "name": "Mao",
+      "description": "Mysterious wizard"
+    },
+    "natori": {
+      "name": "Natori",
+      "description": "Friendly male character"
+    },
+    "mark": {
+      "name": "Mark",
+      "description": "Humorous male character"
+    },
+    "rice": {
+      "name": "Rice",
+      "description": "Cool wizard"
+    },
+    "wanko": {
+      "name": "Wanko",
+      "description": "Loyal puppy"
+    }
+  },
+  "errors": {
+    "badCredentials": {
+      "title": "Bad Credentials",
+      "description": "Your credentials are either invalid or expired."
+    },
+    "missingScopes": {
+      "title": "Missing Scopes",
+      "description": "Your credentials are missing a required API scope."
+    },
+    "network": {
+      "title": "Network Error",
+      "description1": "Unable to connect to one or more of your GitHub environments.",
+      "description2": "Please check your network connection, including whether you require a VPN, and try again."
+    },
+    "rateLimited": {
+      "title": "Rate Limited",
+      "description": "Please wait a while before trying again."
+    },
+    "unknown": {
+      "title": "Oops! Something went wrong",
+      "description": "Please try again later."
+    }
+  },
+  "validation": {
+    "hostnameRequired": "Hostname is required",
+    "hostnameInvalid": "Hostname format is invalid",
+    "tokenRequired": "Token is required",
+    "tokenInvalid": "Token format is invalid",
+    "clientIdRequired": "Client ID is required",
+    "clientIdInvalid": "Client ID format is invalid",
+    "clientSecretRequired": "Client Secret is required",
+    "clientSecretInvalid": "Client Secret format is invalid",
+    "failedToValidateToken": "Failed to validate provided token against {{hostname}}",
+    "failedToValidateOAuth": "Failed to validate provided Client ID and Secret against {{hostname}}",
+    "formErrors": "Form errors",
+    "validationErrors": "Validation errors"
+  },
+  "notifications": {
+    "single": {
+      "reviewRequested": "GitChan says~ New review request! ✨",
+      "comment": "Someone left a comment! 💬",
+      "approvalRequested": "Approval request received~ Please check! 📋",
+      "assign": "New task assigned! Let's go! 📌",
+      "author": "Update on your thread! ✏️",
+      "ciActivity": "CI/CD job completed! 🔧",
+      "invitation": "New invitation received~ Welcome! 💌",
+      "manual": "Subscribed thread updated! 🔔",
+      "memberFeatureRequested": "New feature request! 🌟",
+      "mention": "Someone mentioned you! Let's check? 👋",
+      "securityAdvisoryCredit": "Security contribution recognized! Amazing~ 🛡️",
+      "securityAlert": "Security alert! Please check~ 🚨",
+      "stateChange": "State changed! 🔄",
+      "subscribed": "News from subscribed repository! 📢",
+      "teamMention": "Your team was mentioned! Let's check together~ 👥",
+      "approved": "PR approved! Congratulations~! 🎉",
+      "changesRequested": "Changes requested~ Keep going! 💪",
+      "default": "You have a new notification~ 📬"
+    },
+    "multiple": {
+      "few": "You have {{count}} notifications~ Please check! 💕",
+      "some": "{{count}} notifications piled up! You're busy~ 😊",
+      "many": "Wow~ {{count}} notifications! You're popular~ ✨"
+    },
+    "system": {
+      "multipleNotifications": "You have {{count}} notifications"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "withGitHub": "Login with GitHub",
+    "withPAT": "Login with Personal Access Token",
+    "withOAuth": "Login with OAuth App",
+    "hostname": "Hostname",
+    "hostnameHint": "Change only if you are using GitHub Enterprise Server",
+    "token": "Token",
+    "tokenPlaceholder": "Your generated token (40 characters)",
+    "clientId": "Client ID",
+    "clientSecret": "Client Secret",
+    "showToken": "Show token",
+    "hideToken": "Hide token",
+    "createToken": "Create a token",
+    "createOAuthApp": "Create an OAuth App",
+    "pasteTokenBelow": "on GitHub to paste the token below.",
+    "useCredentialsBelow": "and use your client id & secret below."
+  }
+}

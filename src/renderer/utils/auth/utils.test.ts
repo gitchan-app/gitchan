@@ -40,7 +40,7 @@ describe('renderer/utils/auth/utils.ts', () => {
       window.gitify.onAuthCallback = jest
         .fn()
         .mockImplementation((callback) => {
-          callback('gitify://auth?code=123-456');
+          callback('gitchan://auth?code=123-456');
         });
 
       const res = await authUtils.authGitHub();
@@ -63,7 +63,7 @@ describe('renderer/utils/auth/utils.ts', () => {
       window.gitify.onAuthCallback = jest
         .fn()
         .mockImplementation((callback) => {
-          callback('gitify://oauth?code=123-456');
+          callback('gitchan://oauth?code=123-456');
         });
 
       const res = await authUtils.authGitHub({
@@ -91,7 +91,7 @@ describe('renderer/utils/auth/utils.ts', () => {
         .fn()
         .mockImplementation((callback) => {
           callback(
-            'gitify://auth?error=invalid_request&error_description=The+redirect_uri+is+missing+or+invalid.&error_uri=https://docs.github.com/en/developers/apps/troubleshooting-oauth-errors',
+            'gitchan://auth?error=invalid_request&error_description=The+redirect_uri+is+missing+or+invalid.&error_uri=https://docs.github.com/en/developers/apps/troubleshooting-oauth-errors',
           );
         });
 

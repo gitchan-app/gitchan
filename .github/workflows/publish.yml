@@ -1,8 +1,8 @@
 name: Publish
 
-on: 
+on:
   workflow_call:
-  workflow_dispatch: # For manually running release process to verify code-signing of artifacts
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,36 +14,40 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
-      
-      - name: Setup Node
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        uses: pnpm/action-setup@v4
         with:
-          node-version-file: '.nvmrc'
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
           cache: 'pnpm'
-      
-      - run: pnpm install
+
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build
         env:
           OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
           OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
-      - run: pnpm package:macos --publish onTagOrDraft
+      # Code signing disabled - using identity=null
+      # To enable code signing, uncomment the env vars below and remove -c.mac.identity=null
+      - run: pnpm package:macos --publish onTagOrDraft -c.mac.identity=null
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NOTARIZE: true
-      
+          # APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          # APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          # APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
+          # CSC_LINK: ${{ secrets.CSC_LINK }}
+          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          # NOTARIZE: true
+
       - name: Upload artifacts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@v4
         with:
-          name: Gitify-release-mac
+          name: GitChan-release-mac
           path: dist/
           overwrite: true
 
@@ -53,18 +57,20 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
-      
-      - name: Setup Node
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        uses: pnpm/action-setup@v4
         with:
-          node-version-file: '.nvmrc'
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
           cache: 'pnpm'
-      
-      - run: pnpm install
+
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build
         env:
           OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
@@ -72,11 +78,11 @@ jobs:
       - run: pnpm package:win --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Upload artifacts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@v4
         with:
-          name: Gitify-release-win
+          name: GitChan-release-win
           path: dist/
           overwrite: true
 
@@ -86,18 +92,20 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
-      
-      - name: Setup Node
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        uses: pnpm/action-setup@v4
         with:
-          node-version-file: '.nvmrc'
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
           cache: 'pnpm'
-      
-      - run: pnpm install
+
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build
         env:
           OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
@@ -105,10 +113,10 @@ jobs:
       - run: pnpm package:linux --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Upload artifacts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@v4
         with:
-          name: Gitify-release-linux
+          name: GitChan-release-linux
           path: dist/
           overwrite: true

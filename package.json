@@ -1,8 +1,8 @@
 {
-  "name": "gitify",
-  "version": "6.14.1",
+  "name": "gitchan",
+  "version": "0.0.1",
   "private": true,
-  "description": "GitHub notifications on your menu bar.",
+  "description": "GitChan - Cute GitHub notification mascot on your desktop!",
   "main": "build/main.js",
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
@@ -23,57 +23,44 @@
     "test": "jest",
     "start": "electron . --enable-logging",
     "prepare": "husky",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "release:patch": "npm version patch -m 'Release v%s'",
+    "release:minor": "npm version minor -m 'Release v%s'",
+    "release:major": "npm version major -m 'Release v%s'"
   },
   "engines": {
     "node": ">=24"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitify-app/gitify.git"
+    "url": "https://github.com/gitchan-app/gitchan.git"
   },
   "keywords": [
-    "gitify",
+    "gitchan",
     "github",
     "notifications",
     "electron",
-    "menubar",
-    "taskbar",
-    "tray"
+    "mascot",
+    "desktop-pet",
+    "kawaii"
   ],
   "author": {
-    "name": "Adam Setch",
-    "url": "https://github.com/setchy"
+    "name": "GitChan Team"
   },
-  "contributors": [
-    {
-      "name": "Emmanouil Konstantinidis",
-      "url": "https://github.com/manosim"
-    },
-    {
-      "name": "Jake 'Sid' Smith",
-      "url": "https://github.com/JakeSidSmith"
-    },
-    {
-      "name": "Adam Setch",
-      "url": "https://github.com/setchy"
-    },
-    {
-      "name": "Afonso Ramos",
-      "url": "https://github.com/afonsojramos"
-    }
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gitify-app/gitify/issues"
+    "url": "https://github.com/gitchan-app/gitchan/issues"
   },
-  "homepage": "https://gitify.io/",
+  "homepage": "https://gitchan.io/",
   "dependencies": {
     "electron-log": "5.4.3",
     "electron-updater": "6.7.3",
+    "i18next": "^25.7.4",
+    "i18next-browser-languagedetector": "^8.2.0",
     "menubar": "9.5.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-i18next": "^16.5.1",
     "react-router-dom": "7.12.0"
   },
   "devDependencies": {

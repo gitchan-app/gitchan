@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import type { OcticonProps } from '@primer/octicons-react';
 
+import type { MascotModelId } from '../shared/constants';
+
 import type {
   DiscussionStateReason,
   IssueState,
@@ -59,6 +61,7 @@ export type ConfigSettingsValue =
   | number
   | FetchType
   | GroupBy
+  | MascotModelId
   | OpenPreference
   | Percentage
   | Theme;
@@ -133,6 +136,10 @@ export interface SystemSettingsState {
   playSound: boolean;
   notificationVolume: Percentage;
   openAtStartup: boolean;
+  mascotModel: MascotModelId;
+  mascotScale: Percentage;
+  mascotBadgeY: number;
+  mascotWindowScale: Percentage;
 }
 
 /**

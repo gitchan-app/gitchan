@@ -26,7 +26,7 @@ import {
   getUnreadNotificationCount,
 } from '../utils/notifications/notifications';
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
-import { raiseSoundNotification } from '../utils/notifications/sound';
+import { raiseSoundNotificationByType } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
 
 interface NotificationsState {
@@ -121,13 +121,30 @@ export const useNotifications = (): NotificationsState => {
       );
 
       if (diffNotifications.length > 0) {
+        const firstNotification = diffNotifications[0];
+        const notificationType = firstNotification.reason.code;
+
         if (state.settings.playSound) {
-          raiseSoundNotification(state.settings.notificationVolume);
+          raiseSoundNotificationByType(
+            state.settings.notificationVolume,
+            notificationType,
+          );
         }
 
         if (state.settings.showNotifications) {
           raiseNativeNotification(diffNotifications);
         }
+
+        // Notify GitChan mascot
+        const message =
+          diffNotifications.length > 1
+            ? `New Notification is come - ${diffNotifications.length}!`
+            : firstNotification.subject.title.slice(0, 30);
+        window.gitify.mascot.notify(
+          notificationType,
+          message,
+          diffNotifications.length,
+        );
       }
 
       setStatus('success');

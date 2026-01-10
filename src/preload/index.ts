@@ -48,7 +48,44 @@ export const api = {
       sendMainEvent(EVENTS.USE_UNREAD_ACTIVE_ICON, value),
   },
 
+  mascot: {
+    notify: (type: string, message: string, count: number) => {
+      sendMainEvent(EVENTS.MASCOT_NEW_NOTIFICATION, { type, message, count });
+    },
+
+    playSound: () => {
+      sendMainEvent(EVENTS.MASCOT_PLAY_SOUND);
+    },
+
+    toggleVisibility: () => {
+      sendMainEvent(EVENTS.MASCOT_TOGGLE_VISIBILITY);
+    },
+
+    setAnimation: (animation: string) => {
+      sendMainEvent(EVENTS.MASCOT_SET_ANIMATION, animation);
+    },
+
+    changeModel: (modelId: string) => {
+      sendMainEvent(EVENTS.MASCOT_CHANGE_MODEL, modelId);
+    },
+
+    setScale: (scale: number) => {
+      sendMainEvent(EVENTS.MASCOT_SET_SCALE, scale);
+    },
+
+    setBadgeY: (y: number) => {
+      sendMainEvent(EVENTS.MASCOT_SET_BADGE_Y, y);
+    },
+
+    setWindowScale: (scale: number) => {
+      sendMainEvent(EVENTS.MASCOT_SET_WINDOW_SCALE, scale);
+    },
+  },
+
   notificationSoundPath: () => invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH),
+
+  notificationSoundPathByType: (type: string) =>
+    invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH_BY_TYPE, type),
 
   twemojiDirectory: () => invokeMainEvent(EVENTS.TWEMOJI_DIRECTORY),
 

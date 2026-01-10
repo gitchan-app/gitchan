@@ -2,7 +2,7 @@ import path from 'node:path';
 
 export const TrayIcons = {
   active: getIconPath('tray-active.png'),
-  idle: getIconPath('tray-idleTemplate.png'),
+  idle: getIconPath('tray-idle.png'),
   idleAlternate: getIconPath('tray-idle-white.png'),
   error: getIconPath('tray-error.png'),
   offline: getIconPath('tray-offline.png'),

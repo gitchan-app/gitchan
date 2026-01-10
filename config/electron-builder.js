@@ -2,13 +2,15 @@
  * @type {import('electron-builder').Configuration}
  */
 const config = {
-  productName: 'Gitify',
-  appId: 'com.electron.gitify',
-  copyright: 'Copyright © 2025 Gitify Team',
+  productName: 'GitChan',
+  appId: 'com.electron.gitchan',
+  copyright: 'Copyright © 2025 GitChan',
   asar: true,
   files: [
     'assets/images/*',
     'assets/sounds/*',
+    'assets/live2d/**/*',
+    'assets/lib/*',
     'build/**/*',
     'LICENSE',
     'node_modules/**/*',
@@ -17,8 +19,8 @@ const config = {
   electronLanguages: ['en'],
   protocols: [
     {
-      name: 'Gitify',
-      schemes: ['gitify', 'gitify-dev'],
+      name: 'GitChan',
+      schemes: ['gitchan', 'gitchan-dev'],
     },
   ],
   mac: {
@@ -50,12 +52,12 @@ const config = {
   linux: {
     target: ['AppImage', 'deb', 'rpm'],
     category: 'Development',
-    maintainer: 'Gitify Team',
+    maintainer: 'GitChan',
   },
   publish: {
     provider: 'github',
-    owner: 'gitify-app',
-    repo: 'gitify',
+    owner: 'gitchan-app',
+    repo: 'gitchan',
   },
   afterSign: 'scripts/afterSign.js',
   afterPack: 'scripts/afterPack.js',

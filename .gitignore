@@ -17,3 +17,26 @@ coverage
 
 # Mac Files
 .DS_Store
+
+# Live2D models with restricted licenses
+assets/live2d/kesyoban/
+
+# Live2D SDK demos and docs (not needed for app)
+assets/live2d/Demo/
+assets/live2d/TypeScript/
+assets/live2d/README*.md
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS generated files
+Thumbs.db
+ehthumbs.db

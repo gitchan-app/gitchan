@@ -17,10 +17,21 @@ export const EVENTS = {
   SAFE_STORAGE_ENCRYPT: `${P}safe-storage-encrypt`,
   SAFE_STORAGE_DECRYPT: `${P}safe-storage-decrypt`,
   NOTIFICATION_SOUND_PATH: `${P}notification-sound-path`,
+  NOTIFICATION_SOUND_PATH_BY_TYPE: `${P}notification-sound-path-by-type`,
   OPEN_EXTERNAL: `${P}open-external`,
   RESET_APP: `${P}reset-app`,
   UPDATE_THEME: `${P}update-theme`,
   TWEMOJI_DIRECTORY: `${P}twemoji-directory`,
+  // GitChan Mascot Events
+  MASCOT_NEW_NOTIFICATION: `${P}mascot-new-notification`,
+  MASCOT_PLAY_SOUND: `${P}mascot-play-sound`,
+  MASCOT_TOGGLE_VISIBILITY: `${P}mascot-toggle-visibility`,
+  MASCOT_SET_ANIMATION: `${P}mascot-set-animation`,
+  MASCOT_CHANGE_MODEL: `${P}mascot-change-model`,
+  MASCOT_SET_SCALE: `${P}mascot-set-scale`,
+  MASCOT_SET_BADGE_Y: `${P}mascot-set-badge-y`,
+  MASCOT_SET_WINDOW_SCALE: `${P}mascot-set-window-scale`,
+  MASCOT_GET_MODELS: `${P}mascot-get-models`,
 } as const;
 
 export type EventType = (typeof EVENTS)[keyof typeof EVENTS];
@@ -40,10 +51,17 @@ export interface IOpenExternal {
   activate: boolean;
 }
 
+export interface IMascotNotification {
+  type: string;
+  message: string;
+  count: number;
+}
+
 export type EventData =
   | string
   | number
   | boolean
   | IKeyboardShortcut
   | IAutoLaunch
-  | IOpenExternal;
+  | IOpenExternal
+  | IMascotNotification;

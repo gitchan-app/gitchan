@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitChan Mascot</title>
+    <!-- Cubism 4 Core (must load first) -->
+    <script src="../assets/lib/live2dcubismcore.min.js"></script>
+    <!-- PixiJS v6 -->
+    <script src="../assets/lib/pixi.v6.min.js"></script>
+    <!-- pixi-live2d-display for Cubism 4 -->
+    <script src="../assets/lib/pixi-live2d-display-cubism4.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      #canvas {
+        width: 100%;
+        height: 100%;
+        -webkit-app-region: drag;
+      }
+
+      .speech-bubble {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        background: white;
+        padding: 10px 14px;
+        border-radius: 18px;
+        font-size: 13px;
+        font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        white-space: nowrap;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        max-width: 200px;
+        text-align: center;
+        z-index: 100;
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      .speech-bubble.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .speech-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid white;
+      }
+
+      .notification-badge {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #ff4757;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        min-width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: scale(0);
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+      }
+
+      .notification-badge.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="speech-bubble" id="speechBubble"></div>
+    <div class="notification-badge" id="badge">0</div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+      const { Live2DModel } = PIXI.live2d;
+
+      // Base scale for each model (at 100%)
+      const MODEL_BASE_SCALES = {
+        hiyori: 0.15,
+        haru: 0.15,
+        mao: 0.15,
+        natori: 0.15,
+        mark: 0.15,
+        rice: 0.25,
+        wanko: 0.25
+      };
+
+      // Available models configuration
+      const MODELS = {
+        hiyori: {
+          name: 'Hiyori',
+          path: '../assets/live2d/Hiyori/Hiyori.model3.json',
+          position: { x: 100, y: 350 }
+        },
+        haru: {
+          name: 'Haru',
+          path: '../assets/live2d/Haru/Haru.model3.json',
+          position: { x: 100, y: 350 }
+        },
+        mao: {
+          name: 'Mao',
+          path: '../assets/live2d/Mao/Mao.model3.json',
+          position: { x: 100, y: 350 }
+        },
+        natori: {
+          name: 'Natori',
+          path: '../assets/live2d/Natori/Natori.model3.json',
+          position: { x: 100, y: 350 }
+        },
+        mark: {
+          name: 'Mark',
+          path: '../assets/live2d/Mark/Mark.model3.json',
+          position: { x: 100, y: 350 }
+        },
+        rice: {
+          name: 'Rice',
+          path: '../assets/live2d/Rice/Rice.model3.json',
+          position: { x: 100, y: 320 }
+        },
+        wanko: {
+          name: 'Wanko',
+          path: '../assets/live2d/Wanko/Wanko.model3.json',
+          position: { x: 100, y: 320 }
+        }
+      };
+
+      let model = null;
+      let app = null;
+      let currentModelId = 'hiyori';
+      let currentScalePercent = 100; // User scale percentage (50-150)
+      let currentWindowWidth = 200;
+      let currentWindowHeight = 450;
+      let isLoading = false;
+      const speechBubble = document.getElementById('speechBubble');
+      const badge = document.getElementById('badge');
+      let hideTimeout = null;
+
+      // Calculate actual scale from base scale and user percentage
+      function getActualScale(modelId) {
+        const baseScale = MODEL_BASE_SCALES[modelId] || 0.15;
+        return baseScale * (currentScalePercent / 100);
+      }
+
+      // Apply scale to current model
+      function applyScale() {
+        if (model && currentModelId) {
+          const actualScale = getActualScale(currentModelId);
+          model.scale.set(actualScale);
+        }
+      }
+
+      // Mouse move handler (single instance)
+      function onMouseMove(e) {
+        if (model && app) {
+          const rect = app.view.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          const y = (e.clientY - rect.top) / rect.height;
+          model.focus(x * 2 - 1, y * 2 - 1);
+        }
+      }
+
+      // Initialize PIXI Application
+      async function init() {
+        app = new PIXI.Application({
+          view: document.getElementById('canvas'),
+          width: currentWindowWidth,
+          height: currentWindowHeight,
+          backgroundAlpha: 0,
+          antialias: true,
+          resolution: window.devicePixelRatio || 1,
+          autoDensity: true,
+        });
+
+        // Add mouse tracking once
+        document.addEventListener('mousemove', onMouseMove);
+
+        await loadModel(currentModelId);
+      }
+
+      // Resize canvas and reposition model
+      function resizeCanvas(width, height) {
+        currentWindowWidth = width;
+        currentWindowHeight = height;
+
+        if (app?.renderer) {
+          app.renderer.resize(width, height);
+
+          // Update model position proportionally
+          if (model) {
+            const modelConfig = MODELS[currentModelId];
+            if (modelConfig) {
+              // Scale position proportionally
+              model.x = (modelConfig.position.x / 200) * width;
+              model.y = (modelConfig.position.y / 450) * height;
+            }
+          }
+        }
+      }
+
+      // Load a specific model
+      async function loadModel(modelId) {
+        const modelConfig = MODELS[modelId];
+        if (!modelConfig) {
+          return false;
+        }
+
+        // Prevent concurrent loading
+        if (isLoading) {
+          return false;
+        }
+
+        isLoading = true;
+
+        try {
+          // Remove existing model if any
+          if (model) {
+            model.off('pointerdown');
+            app.stage.removeChild(model);
+            model.destroy();
+            model = null;
+          }
+          const newModel = await Live2DModel.from(modelConfig.path);
+
+          // Update current model ID first
+          currentModelId = modelId;
+
+          // Calculate and apply scale
+          const actualScale = getActualScale(modelId);
+          newModel.scale.set(actualScale);
+          newModel.anchor.set(0.5, 0.5);
+          // Position proportionally to current window size
+          newModel.x = (modelConfig.position.x / 200) * currentWindowWidth;
+          newModel.y = (modelConfig.position.y / 450) * currentWindowHeight;
+
+          // Add to stage
+          app.stage.addChild(newModel);
+
+          // Enable interaction
+          newModel.interactive = true;
+          newModel.buttonMode = true;
+
+          // Click handler - play tap motion
+          newModel.on('pointerdown', () => {
+            playMotion('TapBody');
+            speechBubble.classList.remove('show');
+          });
+
+          model = newModel;
+          isLoading = false;
+          return true;
+        } catch (_error) {
+          isLoading = false;
+          return false;
+        }
+      }
+
+      // Set user scale percentage
+      function setScale(scalePercent) {
+        // Clamp between 50 and 150
+        currentScalePercent = Math.max(50, Math.min(150, scalePercent));
+        applyScale();
+      }
+
+      function playMotion(motionGroup, index) {
+        if (model?.internalModel?.motionManager) {
+          model.motion(motionGroup, index);
+        }
+      }
+
+      function showMessage(message) {
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+        }
+
+        speechBubble.textContent = message;
+        speechBubble.classList.add('show');
+
+        hideTimeout = setTimeout(() => {
+          speechBubble.classList.remove('show');
+        }, 5000);
+      }
+
+      function updateBadge(count) {
+        if (count > 0) {
+          badge.textContent = count > 99 ? '99+' : count;
+          badge.classList.add('show');
+        } else {
+          badge.classList.remove('show');
+        }
+      }
+
+      // Set badge Y position
+      function setBadgeY(y) {
+        // Clamp between 20 and 200
+        const clampedY = Math.max(20, Math.min(200, y));
+        badge.style.top = `${clampedY}px`;
+      }
+
+      // Motion mapping for different notification types
+      const motionMap = {
+        'review_requested': 'TapBody',
+        'comment': 'TapBody',
+        'mention': 'TapBody',
+        'approved': 'TapBody',
+        'changes_requested': 'Idle',
+        'multiple': 'TapBody',
+        'default': 'Idle'
+      };
+
+      // Listen for notifications from main process
+      if (window.gitchanMascot) {
+        window.gitchanMascot.onNewNotification((data) => {
+          showMessage(data.message);
+          updateBadge(data.count);
+
+          // Play appropriate motion based on notification type
+          const motion = motionMap[data.type] || motionMap.default;
+          playMotion(motion);
+        });
+
+        window.gitchanMascot.onSetAnimation((animation) => {
+          playMotion(animation);
+        });
+
+        // Listen for model change requests
+        window.gitchanMascot.onChangeModel((modelId) => {
+          if (MODELS[modelId]) {
+            loadModel(modelId);
+          }
+        });
+
+        // Listen for scale change requests
+        window.gitchanMascot.onSetScale((scale) => {
+          setScale(scale);
+        });
+
+        // Listen for badge Y position change
+        window.gitchanMascot.onSetBadgeY((y) => {
+          setBadgeY(y);
+        });
+
+        // Listen for window scale change
+        window.gitchanMascot.onSetWindowScale((data) => {
+          resizeCanvas(data.width, data.height);
+        });
+      }
+
+      // Expose functions for external use
+      window.getAvailableModels = () => Object.keys(MODELS).map(id => ({
+        id,
+        name: MODELS[id].name
+      }));
+
+      window.changeModel = (modelId) => {
+        if (MODELS[modelId]) {
+          return loadModel(modelId);
+        }
+        return Promise.resolve(false);
+      };
+
+      window.setScale = setScale;
+      window.getScale = () => currentScalePercent;
+      window.getCurrentModel = () => currentModelId;
+
+      // Initialize when DOM is ready
+      init();
+    </script>
+  </body>
+</html>

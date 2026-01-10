@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF85A2"/>
+      <stop offset="100%" style="stop-color:#FF69B4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cat Icon (centered) -->
+  <g transform="translate(7, 7)">
+    <!-- Left Ear -->
+    <path d="M 8 18 L 12 6 L 20 16 Z" fill="url(#pinkGrad)"/>
+    <path d="M 11 16 L 13 10 L 17 15 Z" fill="#FF5A8A"/>
+    
+    <!-- Right Ear -->
+    <path d="M 42 18 L 38 6 L 30 16 Z" fill="url(#pinkGrad)"/>
+    <path d="M 39 16 L 37 10 L 33 15 Z" fill="#FF5A8A"/>
+    
+    <!-- Face -->
+    <ellipse cx="25" cy="30" rx="18" ry="16" fill="url(#pinkGrad)"/>
+    
+    <!-- Eyes -->
+    <ellipse cx="18" cy="28" rx="4" ry="5" fill="white"/>
+    <ellipse cx="32" cy="28" rx="4" ry="5" fill="white"/>
+    <circle cx="19" cy="29" r="2.5" fill="#2D3436"/>
+    <circle cx="33" cy="29" r="2.5" fill="#2D3436"/>
+    <circle cx="20" cy="27.5" r="1" fill="white"/>
+    <circle cx="34" cy="27.5" r="1" fill="white"/>
+    
+    <!-- Nose -->
+    <path d="M 25 34 L 23.5 32 L 26.5 32 Z" fill="#FF5A8A"/>
+    
+    <!-- Mouth -->
+    <path d="M 22 36 Q 25 39 28 36" stroke="#FF5A8A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Blush -->
+    <ellipse cx="12" cy="34" rx="3" ry="1.8" fill="#FFB6C1" opacity="0.6"/>
+    <ellipse cx="38" cy="34" rx="3" ry="1.8" fill="#FFB6C1" opacity="0.6"/>
+  </g>
+</svg>

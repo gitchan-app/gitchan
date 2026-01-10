@@ -11,11 +11,12 @@ import {
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
-import { APPLICATION } from '../shared/constants';
+import { APPLICATION, NOTIFICATION_SOUNDS } from '../shared/constants';
 import {
   EVENTS,
   type IAutoLaunch,
   type IKeyboardShortcut,
+  type IMascotNotification,
   type IOpenExternal,
 } from '../shared/events';
 import { logInfo, logWarn } from '../shared/logger';
@@ -23,6 +24,7 @@ import { logInfo, logWarn } from '../shared/logger';
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
+import { createMascotWindow, notifyMascot, setupMascotEvents } from './mascot';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
@@ -40,6 +42,7 @@ const notificationSoundFilePath = path.join(
   'sounds',
   APPLICATION.NOTIFICATION_SOUND,
 );
+const soundsDir = path.join(__dirname, '..', 'assets', 'sounds');
 const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
 
 const browserWindowOpts: BrowserWindowConstructorOptions = {
@@ -69,7 +72,7 @@ const contextMenu = menuBuilder.buildMenu();
 
 // Register your app as the handler for a custom protocol
 const protocol =
-  process.env.NODE_ENV === 'development' ? 'gitify-dev' : 'gitify';
+  process.env.NODE_ENV === 'development' ? 'gitchan-dev' : 'gitchan';
 app.setAsDefaultProtocolClient(protocol);
 
 const appUpdater = new AppUpdater(mb, menuBuilder);
@@ -86,6 +89,10 @@ app.whenReady().then(async () => {
 
   mb.on('ready', () => {
     mb.app.setAppUserModelId(APPLICATION.ID);
+
+    // Initialize GitChan mascot window
+    createMascotWindow();
+    setupMascotEvents();
 
     // Tray configuration
     mb.tray.setToolTip(APPLICATION.NAME);
@@ -195,6 +202,16 @@ app.whenReady().then(async () => {
   });
 
   /**
+   * GitChan Mascot IPC events
+   */
+  onMainEvent(
+    EVENTS.MASCOT_NEW_NOTIFICATION,
+    (_, data: IMascotNotification) => {
+      notifyMascot(data.type, data.message, data.count);
+    },
+  );
+
+  /**
    * Gitify custom IPC events - response expected
    */
 
@@ -202,6 +219,13 @@ app.whenReady().then(async () => {
 
   handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
     return notificationSoundFilePath;
+  });
+
+  handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH_BY_TYPE, (_, type: string) => {
+    const soundFile =
+      NOTIFICATION_SOUNDS[type as keyof typeof NOTIFICATION_SOUNDS] ||
+      NOTIFICATION_SOUNDS.default;
+    return path.join(soundsDir, soundFile);
   });
 
   handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
@@ -217,7 +241,7 @@ app.whenReady().then(async () => {
   });
 });
 
-// Handle gitify:// custom protocol URL events for OAuth 2.0 callback
+// Handle gitchan:// custom protocol URL events for OAuth 2.0 callback
 app.on('open-url', (event, url) => {
   event.preventDefault();
   logInfo('main:open-url', `URL received ${url}`);

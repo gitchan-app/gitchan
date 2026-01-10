@@ -22,7 +22,7 @@ describe('renderer/components/icons/LogoIcon.tsx', () => {
     const onClickMock = jest.fn();
     renderWithAppContext(<LogoIcon onClick={onClickMock} size={Size.SMALL} />);
 
-    await userEvent.click(screen.getByLabelText('Gitify Logo'));
+    await userEvent.click(screen.getByLabelText('GitChan Logo'));
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });

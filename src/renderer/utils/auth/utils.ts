@@ -241,11 +241,11 @@ export function getNewOAuthAppURL(hostname: Hostname): Link {
   );
   newOAuthAppURL.searchParams.append(
     'oauth_application[url]',
-    'https://gitify.io',
+    'https://github.com/gitchan-app/gitchan',
   );
   newOAuthAppURL.searchParams.append(
     'oauth_application[callback_url]',
-    'gitify://oauth',
+    'gitchan://oauth',
   );
 
   return newOAuthAppURL.toString() as Link;

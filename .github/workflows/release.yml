@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    branches:
-      - release/v*.*.* # macOS code-signing only works on `push` events and not `pull_request` events
+    tags:
+      - 'v*.*.*'
 
 permissions:
   contents: read
@@ -24,5 +24,5 @@ jobs:
     uses: ./.github/workflows/publish.yml
     needs: tests
     secrets: inherit
-    permissions: 
-      contents: write 
+    permissions:
+      contents: write

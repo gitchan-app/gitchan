@@ -45,7 +45,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
 
     expect(openExternalLinkSpy).toHaveBeenCalledTimes(1);
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      'https://github.com/gitify-app/gitify/releases/tag/v0.0.1',
+      'https://github.com/gitchan-app/gitchan/releases/tag/v0.0.1',
     );
   });
 

@@ -1,0 +1,326 @@
+{
+  "common": {
+    "settings": "設定",
+    "filters": "フィルター",
+    "accounts": "アカウント",
+    "quit": "{{appName}}を終了",
+    "cancel": "キャンセル",
+    "reset": "リセット",
+    "save": "保存",
+    "close": "閉じる",
+    "confirm": "確認",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功"
+  },
+  "settings": {
+    "title": "設定",
+    "appearance": {
+      "title": "外観",
+      "theme": "テーマ:",
+      "themes": {
+        "system": "システム",
+        "lightDefault": "ライト デフォルト",
+        "lightColorblind": "ライト 色覚異常対応",
+        "lightTritanopia": "ライト 三型色覚",
+        "darkDefault": "ダーク デフォルト",
+        "darkColorblind": "ダーク 色覚異常対応",
+        "darkTritanopia": "ダーク 三型色覚",
+        "softDark": "ソフトダーク"
+      },
+      "increaseContrast": "コントラストを上げる",
+      "increaseContrastDescription": "可読性向上のため高コントラスト色を有効にします。追加のアクセシビリティ改善は近日公開予定です。",
+      "zoom": "ズーム:",
+      "zoomOut": "縮小",
+      "zoomPercentage": "ズーム倍率",
+      "zoomIn": "拡大",
+      "resetZoom": "ズームをリセット",
+      "showAccountHeader": "アカウントヘッダーを表示",
+      "showAccountHeaderDescription": "有効にすると、通知リストグループの上にアカウントのプロフィールページへのリンクが表示されます。",
+      "showFullTitle": "通知タイトル全体を表示",
+      "showFullTitleDescription": "長い通知タイトルを切り詰めずに複数行で表示します。"
+    },
+    "notifications": {
+      "title": "通知",
+      "groupBy": "グループ化:",
+      "groupByRepository": "リポジトリ",
+      "groupByDate": "日付",
+      "fetchType": "取得タイプ:",
+      "fetchTypeInterval": "定期的",
+      "fetchTypeInactivity": "非アクティブ時",
+      "fetchInterval": "取得間隔:",
+      "decreaseInterval": "間隔を短くする",
+      "intervalValue": "取得間隔",
+      "increaseInterval": "間隔を長くする",
+      "resetInterval": "間隔をリセット",
+      "fetchAll": "すべての通知を取得",
+      "fetchAllDescription": "有効にすると、GitHubから未読通知をすべて取得します。",
+      "fetchDetailed": "詳細な通知を取得",
+      "fetchDetailedDescription": "有効にすると、ラベル、マイルストーン、レビューなどの追加詳細を取得します。",
+      "showMetricPills": "通知メトリクスを表示",
+      "showMetricPillsDescription": "コメント、レビュー、ラベルなどの通知メトリクスを表示します。",
+      "showGitHubNumber": "GitHub番号を表示",
+      "showGitHubNumberDescription": "GitHubイシューまたはプルリクエスト番号を表示します。",
+      "fetchParticipating": "参加中のみ取得",
+      "fetchParticipatingDescription": "直接参加またはメンションされた通知のみを取得します。",
+      "markDoneOnOpen": "開いたら完了にする",
+      "markDoneOnOpenDescription": "ブラウザで開いたときに通知を完了としてマークします。",
+      "markDoneOnUnsubscribe": "購読解除で完了にする",
+      "markDoneOnUnsubscribeDescription": "購読解除時に通知を完了としてマークします。",
+      "delayState": "通知状態を遅延",
+      "delayStateDescription": "次の取得サイクルまで通知状態の更新を遅延させます。"
+    },
+    "tray": {
+      "title": "トレイ",
+      "showCount": "通知数を表示",
+      "showCountDescription": "トレイアイコンに未読通知数を表示します。",
+      "highlightUnread": "未読通知をハイライト",
+      "highlightUnreadDescription": "未読通知があるときにトレイアイコンをハイライトします。",
+      "alternateIcon": "代替アイドルアイコンを使用",
+      "alternateIconDescription": "トレイに代替アイドルアイコンを使用します。"
+    },
+    "system": {
+      "title": "システム",
+      "language": "言語:",
+      "languages": {
+        "system": "システム",
+        "en": "英語",
+        "ko": "韓国語",
+        "ja": "日本語"
+      },
+      "openLinks": "リンクを開く:",
+      "openForeground": "フォアグラウンド",
+      "openBackground": "バックグラウンド",
+      "keyboardShortcut": "キーボードショートカットを有効化",
+      "keyboardShortcutDescription": "GitChanを開くためのグローバルキーボードショートカットを有効にします。",
+      "showSystemNotifications": "システム通知を表示",
+      "showSystemNotificationsDescription": "新しいGitHub通知に対してデスクトップ通知を表示します。",
+      "playSound": "サウンドを再生",
+      "playSoundDescription": "新しい通知を受信したときにサウンドを再生します。",
+      "volume": "通知音量",
+      "volumeDown": "音量を下げる",
+      "volumePercentage": "音量パーセント",
+      "volumeUp": "音量を上げる",
+      "resetVolume": "音量をリセット",
+      "openAtStartup": "起動時に開く",
+      "openAtStartupDescription": "コンピュータ起動時にGitChanを起動します。",
+      "mascotCharacter": "マスコットキャラクター:",
+      "mascotSize": "マスコットサイズ:",
+      "badgePosition": "バッジ位置:",
+      "windowSize": "ウィンドウサイズ:"
+    },
+    "reset": {
+      "button": "設定をリセット",
+      "title": "設定をリセットしますか？",
+      "description": "すべての設定をGitChanのデフォルトにリセットしてもよろしいですか？",
+      "confirm": "リセット",
+      "cancel": "キャンセル"
+    },
+    "footer": {
+      "viewReleaseNotes": "リリースノートを見る",
+      "accounts": "アカウント",
+      "quit": "{{appName}}を終了"
+    }
+  },
+  "filters": {
+    "title": "フィルター",
+    "clearFilters": "フィルターをクリア",
+    "search": {
+      "include": "含める検索語",
+      "exclude": "除外する検索語"
+    },
+    "userType": {
+      "title": "ユーザータイプ",
+      "user": "ユーザー",
+      "bot": "ボット",
+      "botDescription": "@dependabot、@renovate、@netlifyなどのボットアカウント",
+      "organization": "組織"
+    },
+    "subjectType": {
+      "title": "タイプ",
+      "checkSuite": "チェックスイート",
+      "commit": "コミット",
+      "discussion": "ディスカッション",
+      "issue": "イシュー",
+      "pullRequest": "プルリクエスト",
+      "release": "リリース",
+      "dependabotAlert": "Dependabotアラート",
+      "invitation": "招待",
+      "vulnerabilityAlert": "脆弱性アラート",
+      "workflowRun": "ワークフロー実行"
+    },
+    "state": {
+      "title": "状態",
+      "draft": "ドラフト",
+      "open": "オープン",
+      "openDescription": "オープンまたは再オープン",
+      "merged": "マージ済み",
+      "closed": "クローズ",
+      "closedDescription": "クローズ、完了、重複、解決済み、または予定なし",
+      "other": "その他",
+      "otherDescription": "その他すべての通知状態"
+    },
+    "reason": {
+      "title": "理由",
+      "approvalRequested": "承認リクエスト",
+      "approvalRequestedDescription": "デプロイメントのレビューと承認を依頼されました。",
+      "assigned": "アサイン",
+      "assignedDescription": "イシューにアサインされました。",
+      "authored": "作成",
+      "authoredDescription": "スレッドを作成しました。",
+      "ciActivity": "ワークフロー実行完了",
+      "ciActivityDescription": "リポジトリでGitHub Actionsワークフロー実行がトリガーされました。",
+      "commented": "コメント",
+      "commentedDescription": "スレッドにコメントしました。",
+      "invitationReceived": "招待受信",
+      "invitationReceivedDescription": "リポジトリへの貢献招待を承諾しました。",
+      "manual": "更新",
+      "manualDescription": "イシューまたはプルリクエストを通じてスレッドを購読しました。",
+      "memberFeatureRequested": "メンバー機能リクエスト",
+      "memberFeatureRequestedDescription": "組織メンバーがドラフトプルリクエストやCopilotなどの機能の有効化をリクエストしました。",
+      "mentioned": "メンション",
+      "mentionedDescription": "コンテンツで@メンションされました。",
+      "reviewRequested": "レビューリクエスト",
+      "reviewRequestedDescription": "あなた、またはあなたが所属するチームがプルリクエストのレビューを依頼されました。",
+      "securityAdvisoryCredit": "セキュリティアドバイザリークレジット",
+      "securityAdvisoryCreditDescription": "セキュリティアドバイザリーへの貢献でクレジットを受けました。",
+      "securityAlert": "セキュリティアラート",
+      "securityAlertDescription": "GitHubがリポジトリでセキュリティ脆弱性を発見しました。",
+      "stateChange": "状態変更",
+      "stateChangeDescription": "スレッドの状態を変更しました（例：イシューのクローズ、プルリクエストのマージ）。",
+      "subscribed": "購読中",
+      "subscribedDescription": "リポジトリをウォッチしています。",
+      "teamMention": "チームメンション",
+      "teamMentionDescription": "メンションされたチームに所属していました。"
+    }
+  },
+  "accounts": {
+    "title": "アカウント",
+    "openProfile": "アカウントプロフィールを開く",
+    "openHost": "ホストを開く",
+    "openDeveloperSettings": "開発者設定を開く",
+    "primaryAccount": "プライマリアカウント",
+    "setAsPrimary": "プライマリアカウントに設定",
+    "refresh": "{{login}}を更新",
+    "logout": "{{login}}をログアウト",
+    "addNew": "新しいアカウントを追加",
+    "loginGitHub": "GitHubでログイン",
+    "loginPAT": "Personal Access Tokenでログイン",
+    "loginOAuth": "OAuthアプリでログイン"
+  },
+  "mascot": {
+    "hiyori": {
+      "name": "ひより",
+      "description": "明るく活発な女子学生"
+    },
+    "haru": {
+      "name": "ハル",
+      "description": "落ち着いた女性キャラクター"
+    },
+    "mao": {
+      "name": "マオ",
+      "description": "神秘的な魔法使い"
+    },
+    "natori": {
+      "name": "ナトリ",
+      "description": "親しみやすい男性キャラクター"
+    },
+    "mark": {
+      "name": "マーク",
+      "description": "愉快な男性キャラクター"
+    },
+    "rice": {
+      "name": "ライス",
+      "description": "クールな魔法使い"
+    },
+    "wanko": {
+      "name": "わんこ",
+      "description": "忠実な子犬"
+    }
+  },
+  "errors": {
+    "badCredentials": {
+      "title": "認証情報エラー",
+      "description": "認証情報が無効または期限切れです。"
+    },
+    "missingScopes": {
+      "title": "スコープ不足",
+      "description": "認証情報に必要なAPIスコープがありません。"
+    },
+    "network": {
+      "title": "ネットワークエラー",
+      "description1": "1つ以上のGitHub環境に接続できません。",
+      "description2": "VPNが必要かどうかを含め、ネットワーク接続を確認してから再試行してください。"
+    },
+    "rateLimited": {
+      "title": "レート制限",
+      "description": "しばらく待ってから再試行してください。"
+    },
+    "unknown": {
+      "title": "エラーが発生しました",
+      "description": "後でもう一度お試しください。"
+    }
+  },
+  "validation": {
+    "hostnameRequired": "ホスト名は必須です",
+    "hostnameInvalid": "ホスト名の形式が無効です",
+    "tokenRequired": "トークンは必須です",
+    "tokenInvalid": "トークンの形式が無効です",
+    "clientIdRequired": "クライアントIDは必須です",
+    "clientIdInvalid": "クライアントIDの形式が無効です",
+    "clientSecretRequired": "クライアントシークレットは必須です",
+    "clientSecretInvalid": "クライアントシークレットの形式が無効です",
+    "failedToValidateToken": "{{hostname}}でトークンを検証できませんでした",
+    "failedToValidateOAuth": "{{hostname}}でクライアントIDとシークレットを検証できませんでした",
+    "formErrors": "フォームエラー",
+    "validationErrors": "検証エラー"
+  },
+  "notifications": {
+    "single": {
+      "reviewRequested": "GitChanからお知らせ〜 レビューリクエストが届きました！✨",
+      "comment": "コメントが届きました！💬",
+      "approvalRequested": "承認リクエストが届きました〜 確認してね！📋",
+      "assign": "新しいタスクがアサインされました！頑張って！📌",
+      "author": "あなたのスレッドに更新があります！✏️",
+      "ciActivity": "CI/CDジョブが完了しました！🔧",
+      "invitation": "新しい招待が届きました〜 ようこそ！💌",
+      "manual": "購読中のスレッドが更新されました！🔔",
+      "memberFeatureRequested": "新機能リクエストがあります！🌟",
+      "mention": "誰かがあなたをメンションしました！確認してみて〜 👋",
+      "securityAdvisoryCredit": "セキュリティ貢献が認められました！すごい〜 🛡️",
+      "securityAlert": "セキュリティアラート！確認してね〜 🚨",
+      "stateChange": "状態が変更されました！🔄",
+      "subscribed": "購読中のリポジトリからお知らせ！📢",
+      "teamMention": "チームがメンションされました！一緒に確認しよう〜 👥",
+      "approved": "PRが承認されました！おめでとう〜！🎉",
+      "changesRequested": "変更リクエストがあります〜 頑張って！💪",
+      "default": "新しい通知があります〜 📬"
+    },
+    "multiple": {
+      "few": "{{count}}件の通知があります〜 確認してね！💕",
+      "some": "{{count}}件の通知が溜まってます！忙しいね〜 😊",
+      "many": "わあ〜 {{count}}件の通知！人気者だね〜 ✨"
+    },
+    "system": {
+      "multipleNotifications": "{{count}}件の通知があります"
+    }
+  },
+  "login": {
+    "title": "ログイン",
+    "withGitHub": "GitHubでログイン",
+    "withPAT": "Personal Access Tokenでログイン",
+    "withOAuth": "OAuthアプリでログイン",
+    "hostname": "ホスト名",
+    "hostnameHint": "GitHub Enterprise Serverを使用している場合のみ変更してください",
+    "token": "トークン",
+    "tokenPlaceholder": "生成したトークン（40文字）",
+    "clientId": "クライアントID",
+    "clientSecret": "クライアントシークレット",
+    "showToken": "トークンを表示",
+    "hideToken": "トークンを隠す",
+    "createToken": "トークンを作成",
+    "createOAuthApp": "OAuthアプリを作成",
+    "pasteTokenBelow": "してから、以下にトークンを貼り付けてください。",
+    "useCredentialsBelow": "して、クライアントIDとシークレットを使用してください。"
+  }
+}
