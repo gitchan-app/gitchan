@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitChan - Cute Live2D Mascot for GitHub Notifications</title>
+  <meta name="description" content="A cute Live2D mascot for GitHub notifications on your desktop. Get notified with style!">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="images/gitchan.png" alt="GitChan" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#characters">Characters</a>
+        <a href="#sounds">Sounds</a>
+        <a href="#download">Download</a>
+        <a href="https://github.com/gitchan-app/gitchan" target="_blank" class="nav-github">
+          <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Based on Gitify</div>
+      <h1 class="hero-title">
+        Meet Your New Desktop Companion
+      </h1>
+      <p class="hero-subtitle">
+        A cute Live2D mascot that brings your GitHub notifications to life.
+        Get notified with style, personality, and a touch of magic.
+      </p>
+      <div class="hero-buttons" id="download">
+        <a href="https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2-universal.dmg" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+          </svg>
+          macOS
+        </a>
+        <a href="https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-Setup-0.0.2.exe" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 12V6.75L9 5.43V11.91L3 12M20 3V11.75L10 11.9V5.21L20 3M3 13L9 13.09V19.9L3 18.75V13M20 13.25V22L10 20.09V13.1L20 13.25Z"/>
+          </svg>
+          Windows
+        </a>
+        <a href="https://github.com/gitchan-app/gitchan/releases/download/v0.0.2/GitChan-0.0.2.AppImage" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"/>
+          </svg>
+          Linux
+        </a>
+      </div>
+      <p class="hero-version">v0.0.2 • Free for personal use</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/preview.png" alt="GitChan Preview" class="preview-img">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Why GitChan?</h2>
+      <p class="section-subtitle">Everything you love about Gitify, now with adorable companions</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Live2D Characters</h3>
+          <p>Choose from 7 unique animated mascots that react to your notifications with delightful expressions</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <h3>Real-time Notifications</h3>
+          <p>Never miss a PR review, mention, or approval. Get instant desktop alerts for all GitHub events</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <h3>Fully Customizable</h3>
+          <p>Adjust mascot size, window position, and notification badge placement to fit your workflow</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+          </div>
+          <h3>Custom Sounds</h3>
+          <p>Different notification sounds for reviews, mentions, and approvals. Adjust volume to your preference</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>Cross-Platform</h3>
+          <p>Available for macOS, Windows, and Linux. Your mascot follows you everywhere</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Open Source</h3>
+          <p>Built on Gitify with full source code available. Free for personal and non-commercial use</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section -->
+  <section class="characters" id="characters">
+    <div class="container">
+      <h2 class="section-title">Meet the Characters</h2>
+      <p class="section-subtitle">7 unique Live2D mascots to choose from</p>
+
+      <div class="characters-grid">
+        <div class="character-card" onclick="openCharacterModal('hiyori.jpg', 'Hiyori', 'Cheerful schoolgirl with bright energy')">
+          <div class="character-avatar">
+            <img src="images/characters/hiyori.jpg" alt="Hiyori">
+          </div>
+          <h3>Hiyori</h3>
+          <p>Cheerful schoolgirl</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('haru.jpg', 'Haru', 'Calm and elegant personality')">
+          <div class="character-avatar">
+            <img src="images/characters/haru.jpg" alt="Haru">
+          </div>
+          <h3>Haru</h3>
+          <p>Calm & elegant</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('mao.jpg', 'Mao', 'Mysterious wizard with magical powers')">
+          <div class="character-avatar">
+            <img src="images/characters/mao.jpg" alt="Mao">
+          </div>
+          <h3>Mao</h3>
+          <p>Mysterious wizard</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('natori.jpg', 'Natori', 'Friendly and warm companion')">
+          <div class="character-avatar">
+            <img src="images/characters/natori.jpg" alt="Natori">
+          </div>
+          <h3>Natori</h3>
+          <p>Friendly & warm</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('mark.jpg', 'Mark', 'Humorous guy who brings smiles')">
+          <div class="character-avatar">
+            <img src="images/characters/mark.jpg" alt="Mark">
+          </div>
+          <h3>Mark</h3>
+          <p>Humorous guy</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('rice.jpg', 'Rice', 'Cool wizard with ice powers')">
+          <div class="character-avatar">
+            <img src="images/characters/rice.jpg" alt="Rice">
+          </div>
+          <h3>Rice</h3>
+          <p>Cool wizard</p>
+        </div>
+
+        <div class="character-card" onclick="openCharacterModal('wanko.png', 'Wanko', 'Loyal puppy always by your side')">
+          <div class="character-avatar">
+            <img src="images/characters/wanko.png" alt="Wanko">
+          </div>
+          <h3>Wanko</h3>
+          <p>Loyal puppy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound Preview Section -->
+  <section class="sounds" id="sounds">
+    <div class="container">
+      <h2 class="section-title">Custom Notification Sounds</h2>
+      <p class="section-subtitle">Click to preview different notification sounds</p>
+
+      <div class="sounds-grid">
+        <div class="sound-card" onclick="playSound('review-requested')">
+          <div class="sound-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="sound-info">
+            <h4>Review Requested</h4>
+            <p>When someone requests your review</p>
+          </div>
+        </div>
+
+        <div class="sound-card" onclick="playSound('mention')">
+          <div class="sound-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
+            </svg>
+          </div>
+          <div class="sound-info">
+            <h4>Mention</h4>
+            <p>When you're mentioned in a comment</p>
+          </div>
+        </div>
+
+        <div class="sound-card" onclick="playSound('approved')">
+          <div class="sound-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="sound-info">
+            <h4>Approval Requested</h4>
+            <p>When someone requests your approval</p>
+          </div>
+        </div>
+
+        <div class="sound-card" onclick="playSound('default')">
+          <div class="sound-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <div class="sound-info">
+            <h4>Default</h4>
+            <p>General notifications</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="tech-stack">
+    <div class="container">
+      <h2 class="section-title">Built With</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-name">Electron</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">React</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">TypeScript</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Live2D SDK</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">PixiJS</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Tailwind CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to meet your new companion?</h2>
+      <p>Download GitChan and make your GitHub notifications delightful</p>
+      <a href="#download" class="btn btn-primary btn-large">Download Now</a>
+    </div>
+  </section>
+
+  <!-- Character Modal -->
+  <div class="modal-overlay" id="characterModal" onclick="closeCharacterModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img src="" alt="" class="modal-image" id="modalImage">
+      <h3 id="modalName"></h3>
+      <p id="modalDesc"></p>
+      <button class="modal-close" onclick="closeCharacterModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/gitchan.png" alt="GitChan">
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/gitchan-app/gitchan" target="_blank">GitHub</a>
+          <a href="https://github.com/gitchan-app/gitchan/issues" target="_blank">Issues</a>
+          <a href="https://github.com/gitchan-app/gitchan/releases" target="_blank">Releases</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Based on <a href="https://github.com/gitify-app/gitify" target="_blank">Gitify</a> • MIT License (app code) • Live2D components subject to Live2D licenses</p>
+        <p>Made with love by the GitChan Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Fade in on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .character-card, .tech-item, .sound-card').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // Sound preview
+    let currentAudio = null;
+    let currentCard = null;
+
+    function playSound(soundName) {
+      // Stop current sound if playing
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        if (currentCard) {
+          currentCard.classList.remove('playing');
+        }
+      }
+
+      // Find the clicked card
+      const card = event.currentTarget;
+
+      // Play new sound
+      currentAudio = new Audio(`sounds/${soundName}.wav`);
+      currentCard = card;
+      card.classList.add('playing');
+
+      currentAudio.play().catch(e => console.log('Audio play failed:', e));
+
+      currentAudio.onended = () => {
+        card.classList.remove('playing');
+        currentAudio = null;
+        currentCard = null;
+      };
+    }
+
+    // Character Modal
+    function openCharacterModal(image, name, desc) {
+      const modal = document.getElementById('characterModal');
+      document.getElementById('modalImage').src = `images/characters/${image}`;
+      document.getElementById('modalImage').alt = name;
+      document.getElementById('modalName').textContent = name;
+      document.getElementById('modalDesc').textContent = desc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCharacterModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      const modal = document.getElementById('characterModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCharacterModal();
+      }
+    });
+  </script>
+</body>
+</html>
