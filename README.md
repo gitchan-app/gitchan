@@ -8,6 +8,11 @@
     <img src="https://img.shields.io/github/license/gitchan-app/gitchan" alt="License">
     <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue" alt="Platform">
   </p>
+  <p>
+    <a href="https://github.com/gitchan-app/gitchan/stargazers"><img src="https://img.shields.io/github/stars/gitchan-app/gitchan?style=social" alt="GitHub Stars"></a>
+    <a href="https://github.com/gitchan-app/gitchan/network/members"><img src="https://img.shields.io/github/forks/gitchan-app/gitchan?style=social" alt="GitHub Forks"></a>
+    <a href="https://github.com/gitchan-app/gitchan/issues"><img src="https://img.shields.io/github/issues/gitchan-app/gitchan" alt="GitHub Issues"></a>
+  </p>
 </div>
 
 ---
@@ -17,6 +22,8 @@
 GitChan is a fork of [Gitify](https://github.com/gitify-app/gitify), enhanced with Live2D character support to make your GitHub notification experience more delightful.
 
 ![GitChan Preview](docs/preview.png)
+
+![Demo](docs/images/demo.gif)
 
 ---
 
@@ -379,6 +386,12 @@ UI components are built with [GitHub Primer](https://primer.style/).
 
 - **Repository**: https://github.com/primer
 - **License**: MIT License
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gitchan-app/gitchan&type=Date)](https://star-history.com/#gitchan-app/gitchan&Date)
 
 ---
 
